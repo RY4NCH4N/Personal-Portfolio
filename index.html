@@ -361,7 +361,7 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-si
       if(fade){display.classList.add('fading');setTimeout(()=>display.classList.remove('fading'),180)}
       const vis=document.getElementById('bo2visual');
       if(catIdx===0&&itemIdx===0){
-        vis.innerHTML=`<img src="${TILTROTOR_SRC}" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0" onerror="this.style.display='none'">${ICONS[item.icon]}`;
+        vis.innerHTML=`<img src="${TILTROTOR_SRC}" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0" onerror="this.outerHTML='${ICONS[item.icon].replace(/'/g,"\\'")}'">`;
       }else{vis.innerHTML=ICONS[item.icon]||'';}
       const nameEl=document.getElementById('bo2name');
       nameEl.textContent=item.name;
